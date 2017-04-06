@@ -1,0 +1,40 @@
+<pt-animation-load></pt-animation-load>
+<div #container class="container container__flex">
+    <md-card class="container__item container__item__left">
+        <div class="container__item__music">
+            <div class="container__item__music__header">
+                <p>Nhạc Việt</p>
+            </div>
+            <div class="container__item__music__body">
+                <pt-vietnam-music [numbersongs]="9"></pt-vietnam-music>
+            </div>
+            <div class="container__item__music__footer">
+                <a [routerLink]="['/nhacviet']" md-button>Xem thêm</a>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="container__item__music">
+            <div class="container__item__music__header">
+                <p>Nhạc Quốc Tế</p>
+            </div>
+            <div class="container__item__music__body">
+                <pt-inter-music [numbersongs]="9"></pt-inter-music>
+            </div>
+            <div class="container__item__music__footer">
+                <a [routerLink]="['/nhacquocte']" md-button>Xem thêm</a>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </md-card>
+    <md-card class="container__item container__item__right">
+        <p>Bảng xếp hạng</p>
+        <md-tab-group>
+            <md-tab label="Việt Nam">
+                <pt-vietnam-music [isBlock]="true" [numbersongs]="6"></pt-vietnam-music>
+            </md-tab>
+            <md-tab label="Quốc Tế">
+                <pt-inter-music (checkLoaded)="loadedMusic($event)" [isBlock]="true" [numbersongs]="6"></pt-inter-music>
+            </md-tab>
+        </md-tab-group>
+    </md-card>
+</div>

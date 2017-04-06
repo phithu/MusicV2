@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Asap&subset=vietnamese');
+.search {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    &__images {
+        width:30%;
+        margin:20px auto;
+        display: block;
+
+    }
+    &__alert {
+        text-align: center;
+        font-family: 'Asap', sans-serif;
+        font-size: 18pt;
+        color: #d11107;
+
+    }
+    &__result {
+        text-align: center;
+        width: 300px;
+        margin: 0px auto;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #333;
+        font-size: 18pt;
+
+    }
+    &__button {
+        width: 88px;
+        margin: 5px auto;
+        background: #c12e27;
+        color: #fff;
+    }
+}

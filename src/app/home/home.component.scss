@@ -1,0 +1,95 @@
+$mainColor: #be1b13;
+@import url('https://fonts.googleapis.com/css?family=Muli&subset=vietnamese');
+@mixin after__before() {
+    content: '';
+    position: absolute;
+    left: 0px;
+}
+.container {
+    display: flex;
+    &__item {
+        margin: 10px 1%;
+        background: #f3f3f3;
+        &__left {
+            width: 73%;
+        }
+        &__right {
+            width: 23%;
+            & p {
+                text-align: center;
+                margin-bottom: 20px;
+                font-family: 'Muli', sans-serif;
+                font-size: 18pt;
+                user-select: none;
+                position: relative;
+                &::before {
+                    content: '';
+                    width: 100%;
+                    height: 3px;
+                    position: absolute;
+                    left: 0px;
+                    background: #c12e27;
+                    bottom: -5px;   
+                }
+            }
+        }
+        &__music {
+            margin-bottom: 40px;
+            &__header {
+                position: relative;
+                &::before {
+                    @include after__before();
+                    bottom: 0px;
+                    width: 100%;
+                    height: 3px;
+                    background: $mainColor;
+                }
+                & p {
+                    user-select: none;
+                    display: inline-block;
+                    background: $mainColor;
+                    color: #fff;
+                    padding: 5px 10px;
+                }
+            }
+            &__footer {
+                & a {
+                    background: $mainColor;
+                    float: right;
+                    color: #fff;
+                    font-weight: bold;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
+.animation__load {
+    width: 15%;
+    margin: 10% auto;
+    &__img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        animation: animationloaded 3s infinite linear;
+    }
+}
+@keyframes animationloaded {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@media screen and (max-width:1199px) {
+    .container__flex {
+        flex-direction: column;
+    }
+    .container__item {
+        width: inherit;
+    }
+}
+.clearfix {
+    clear: both;
+}

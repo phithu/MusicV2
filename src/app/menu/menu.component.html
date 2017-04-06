@@ -1,0 +1,16 @@
+<div class="pt__menu">
+    <button class="pt__menu__bar__button" (click)="toggleSideMenu()">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </button>
+    <div class="pt__menu__logo">
+        <a [routerLink]="['']" class="pt__menu__logo__link">
+            <img src="../assets/img/logo.png" alt="Logo music" class="img__logo">
+        </a>
+    </div>
+    <pt-search-form class="pt__menu__search"></pt-search-form>
+    <pt-menu-link class="pt__menu__container"></pt-menu-link>
+    <button class="pt__menu__search__button" (click)="toggleSideSearch()">
+        <i class="fa fa-search" aria-hidden="true"></i>
+    </button>
+    <div class="clearfix"></div>
+</div>

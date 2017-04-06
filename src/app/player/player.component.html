@@ -1,0 +1,53 @@
+<div class="player" *ngIf="song">
+    <div class="player__background">
+        <img [src]="'http://zmp3-photo-td.zadn.vn/thumb/600_600/'+song.album_cover">
+    </div>
+    <div class="player__content">
+        <audio #player autoplay (ended)="songEnd()">
+            <source [src]="song.source[128]" type="audio/mpeg">
+        </audio>
+        <div class="player__cover" [ngClass]="{'player__cover__animation': checkAnimationCover}" [ngStyle]="{'background-image': 'url(' + 'http://zmp3-photo-td.zadn.vn/thumb/600_600/'+song.album_cover + ')'}">
+        </div>
+        <div class="player__info">
+            <p>Bài hát: {{song.title}}</p>
+            <p>Ca sỹ: {{song.artist}}</p>
+            <div class="player__wrapper">
+                <div class="player__info__time__controls">
+                    <button class="player__button" (click)="loopSong()">
+                        <i class="fa fa-retweet" #iconloopSong id="loopSong" aria-hidden="true"></i>
+                    </button>
+                    <a class="player__button" [href]="song.source[128]" download>
+                        <i class="fa fa-download" aria-hidden="true"></i>
+                    </a>
+                    <div class="button__volume">
+                        <button class="player__button">
+                            <i #iconVolume id="iconVolume" class="fa fa-volume-up" aria-hidden="true"></i>
+                        </button>
+                        <div class="player__volume__bar">
+                            <md-slider max="100" min="0" value="100" (change)="controlVolume($event)"></md-slider>
+                        </div>
+                    </div>
+                </div>
+                <div class="player__info__process" (mousemove)="mouseoverShowTiming($event)" (mouseout)="removeShowTiming()" (click)="goToValue($event)">
+                    <div #processBar class="player__info__process__inner"></div>
+                    <span #showTimeHover class="player__showTimeHover">{{currentTimeHover}}</span>
+                </div>
+                <div class="player__info__time">
+                    <p>{{currentTime}}</p>
+                    <div class="player__info__time__controls">
+                        <button #backButton class="player__button" (click)="backSong()">
+                            <i class="fa fa-backward" aria-hidden="true"></i>
+                        </button>
+                        <button (click)="playAudio()" class="player__button">
+                            <i #iconPlay class="fa fa-pause" aria-hidden="true"></i>
+                        </button>
+                        <button #nextButton class="player__button" (click)="nextSong()">
+                            <i class="fa fa-forward" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <p>{{showTime}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

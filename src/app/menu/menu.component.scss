@@ -1,0 +1,83 @@
+/* == Decorator == */
+$menuBackground: #be1b13;
+@mixin font_Montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+@mixin buttonTransparent {
+    background: transparent;
+    border: 0px;
+    outline: 0px;
+    &:focus {
+        outline: 0px;
+    }
+}
+
+/*================*/
+
+.pt__menu {
+    display: block;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    z-index: 4;
+    top:0px !important;
+    left:0px !important;
+    background: rgba(190,27,19,0.9);
+    &__logo {
+        padding-left: 20px;
+        float: left;
+        &__link {
+            height: 50px;
+            width: 40px;
+            display: block;
+        }
+    }
+    &__container {
+        display: flex;
+        height: 100%;
+        padding: 0px 30px;
+        flex-grow: 1;
+    }
+    &__bar__button,
+    &__search__button {
+       @include buttonTransparent();
+       color: #fff;
+       font-size: 13pt;
+       cursor: pointer;
+       padding: 0px 15px;
+    }
+    
+}
+
+
+.img__logo {
+    height: 40px;
+    padding: 5px 0px;
+}
+@media screen and (min-width:768px) {
+    .pt__menu__bar__button,
+    .pt__menu__search__button {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .pt__menu__search,
+    .pt__menu__container {
+        display: none !important;
+    }
+    .pt__menu {
+        display: flex;
+    }
+    .pt__menu__logo {
+        float: none;
+        flex-grow: 1;
+        padding: 0px;
+        & a{
+            width: 40px;
+            height: 50px;
+            display: block;
+            margin: 0px auto;
+        }
+    }
+}

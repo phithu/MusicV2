@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css?family=Asap&subset=vietnamese');
+$mainColor: #c12e27;
+
+.player {
+    background: #fff;
+    border: 1px solid $mainColor;
+    padding: 20px 0px;
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+    &__volume__bar {
+        position: absolute;
+        left: 30px;
+        top:-13px;
+        display: none;
+        height: 25px;
+    }
+    &__wrapper {
+        margin: 20px auto;
+        position: relative;
+    }
+    &__button {
+        background: transparent;
+        border: none;
+        outline: 0px;
+        margin:0px 10px;
+        color: #fff;
+        font-size: 14pt;
+        cursor: pointer;
+        &:focus {
+            outline: 0px !important;
+        }
+    }
+    &__background {
+        width: 100%;
+        height: 220px;
+        filter: blur(30px);
+        & img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__content {
+        position: absolute;
+        width: 100%;
+        top: 33px;
+        left: 0px;
+        display: flex;
+    }
+    &__cover {
+        width: 200px;
+        height: 200px;
+        margin: 0px 15px;
+        background-size: 100%;
+        border-radius: 50%;
+        box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+        &__animation {
+            animation: animationloaded 90s infinite linear;
+        }  
+    }
+    &__info {
+        flex-grow: 1;
+        margin: 0px 15px;
+        & p {
+            text-align: center;
+            font-family: 'Asap', sans-serif;
+            font-size: 14pt;
+            margin: 3px 0px;
+            color: #ffffff;
+            text-shadow: 2px 1px 2px #2b2b2b;
+        }
+        &__process {
+            width: 90%;
+            height: 10px;
+            background: #c7c7c7;
+            margin: 5px auto;
+            &__inner {
+                height: 10px;
+                width: 0;
+                background: #c12e27;
+                transition: All .2s linear;
+            }
+        }
+        &__time {
+            display: flex;
+            margin: 5px 30px;
+            &__controls {
+                flex-grow: 1;
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+}
+.player__showTimeHover {
+    position: absolute;
+    top: -10px;
+    padding: 5px;
+    background: rgb(51, 51, 51);
+    border-radius: 5px;
+    color: #fff;
+    display: none;
+    -webkit-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    transition: all .2s ease;
+}
+@keyframes animationloaded {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+#loopSong {
+    opacity: 0.6;
+}
+.button__volume {
+    position: relative;
+}
+.button__volume:hover .player__volume__bar{
+    display: block;
+}
+#iconVolume {
+    width: 18px;
+}
+.mat-slider-horizontal {
+    height: 48px;
+    min-width: 80px !important;
+}
+
+@media screen and (min-width:768px) {
+
+}
+
+@media screen and (max-width:767px) {
+    .player {
+        &__background {
+            height: 380px;
+        }
+        &__content {
+            flex-direction: column;
+        }
+        &__cover {
+            margin: 0px auto;
+            margin-bottom: 20px;
+        }
+        &__info p {
+            font-size: 11pt;
+        }
+    }
+ 
+}

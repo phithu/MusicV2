@@ -1,0 +1,9 @@
+<a [routerLink]="[linkName, song.id]" class="item__music">
+    <div class="item__music__cover">
+        <img [src]="song.cover" alt="song.name">
+    </div>
+    <div class="item__music__info__box">
+        <p class="item__music__info"><i class="mi mi-MusicNote"></i> {{song.name}}</p>
+        <p class="item__music__info"><i class="mi mi-Contact"></i> {{song.artist}}</p>
+    </div>
+</a>

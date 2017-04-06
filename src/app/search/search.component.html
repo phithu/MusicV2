@@ -1,0 +1,12 @@
+<pt-animation-load></pt-animation-load>
+<div class="search">
+    <h3 class="search__result">Kết quả tìm kiếm</h3>
+    <ng-container *ngIf="checkSearch; else notfound">
+        <pt-list-music [listMusic]="listMusicSearing" [linkName]="linkName"></pt-list-music>
+    </ng-container>
+    <ng-template #notfound>
+        <p class="search__alert">Không tìm thấy yêu cầu của bạn.</p>
+        <img class="search__images" src="../assets/img/error.png">
+        <button md-button class="search__button" (click)="goBack()">Quay lại</button>
+    </ng-template>
+</div>

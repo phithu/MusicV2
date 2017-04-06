@@ -1,0 +1,56 @@
+/*font*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500&subset=latin-ext,vietnamese');
+/* reset */ 
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+a{
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+body,
+.mat-sidenav-container {
+    background: #e4e4e4;
+   
+}
+.mat-sidenav-backdrop {
+    z-index: 5 !important;
+}
+/*style material*/
+.mat-tab-header, .mat-tab-nav-bar {
+    border:none !important;
+}
+.mat-tab-header-pagination {
+    display: none !important;
+}
+.mat-ink-bar {
+    background-color: #ff0000;
+    opacity: 1 !important;
+    height: 3px !important;
+}
+.mat-tab-label[_ngcontent-c10] {
+    opacity: 1 !important;
+    color: #191919 !important;
+    font-size: 12pt !important;
+}
+.mat-sidenav-backdrop,
+.mat-sidenav-shown{
+    background: rgba(0, 0, 0, 0.9) !important;
+}
+.mat-sidenav-container,
+.mat-sidenav-content {
+    transform: none !important;
+}
+.mat-slider-thumb, .mat-slider-thumb-label, .mat-slider-track-fill {
+    background-color: #c12e27 !important;
+}
+

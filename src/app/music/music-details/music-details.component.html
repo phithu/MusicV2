@@ -1,0 +1,57 @@
+<pt-animation-load></pt-animation-load>
+<ng-container *ngIf="paramsValid; else invalid">
+    <div #container [@togglleContainer]="containerState" class="container container__flex" *ngIf="listMusic">
+        <md-card *ngIf="singerCurrent" class="container__item container__item__left">
+            <pt-player [listMusic]="listMusic" [mdSlideToggleMobile]="mdSlideToggleMobile" [mdSlideToggle]="mdSlideToggle" [checkCategorySong]="checkCategorySong"
+                [autoNextSong]="autoNextSong"></pt-player>
+            <h3 class="container__same__singer"><span>Cùng ca sỹ</span></h3>
+            <div class="container__list__music">
+                <ng-container *ngFor="let song of (listMusic | showBySinger: singerCurrent: id)">
+                    <pt-music-item [ngClass]="{'block__item': false}" [linkName]="linkName" [song]="song"></pt-music-item>
+                </ng-container>
+            </div>
+        </md-card>
+        <md-card class="container__item container__item__right" id="item__right">
+            <header>
+                <p class="header__title"><i class="fa fa-music" aria-hidden="true"></i><span>Đề xuất</span></p>
+                <div class="header__toggle">
+                    <md-slide-toggle #mdSlideToggle class="example-margin" (change)="onChangeSide($event)" [checked]="'checked'">
+                        Tự động phát
+                    </md-slide-toggle>
+                </div>
+                <div class="clearfix"></div>
+            </header>
+            <main class="scrollbar__customize">
+                <pt-vietnam-music *ngIf="checkCategorySong; else typeUSA" [isBlock]="true"></pt-vietnam-music>
+                <ng-template #typeUSA>
+                    <pt-inter-music [isBlock]="true"></pt-inter-music>
+                </ng-template>
+            </main>
+        </md-card>
+    </div>
+    <button id="listMusicButton" md-button (click)="showListMusicResponsive()">
+    <i class="mi mi-MusicInfo"></i>
+</button>
+    <div id="listMusic__responsive" [@toggleResponsive]="responsiveState">
+        <md-card class="container__item container__item__right container__listMusic">
+            <header>
+                <p class="header__title"><i class="fa fa-music" aria-hidden="true"></i><span>Đề xuất</span></p>
+                <div class="header__toggle">
+                    <md-slide-toggle #mdSlideToggleMobile class="example-margin" (change)="onChangeSide($event)" [checked]="'checked'">
+                        Tự động phát
+                    </md-slide-toggle>
+                </div>
+                <div class="clearfix"></div>
+            </header>
+            <main class="scrollbar__customize">
+                <pt-vietnam-music *ngIf="checkCategorySong; else typeUSA" [isBlock]="true"></pt-vietnam-music>
+                <ng-template #typeUSA>
+                    <pt-inter-music [isBlock]="true"></pt-inter-music>
+                </ng-template>
+            </main>
+        </md-card>
+    </div>
+</ng-container>
+<ng-template #invalid>
+    <pt-notfoundpage></pt-notfoundpage>
+</ng-template>

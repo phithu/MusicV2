@@ -1,0 +1,11 @@
+@mixin flexListMusic {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.list__music {
+    @include flexListMusic();
+}
+.block__item {
+    width: 100% !important;
+}

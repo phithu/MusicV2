@@ -1,0 +1,59 @@
+@mixin font_Montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+@mixin buttonTransparent {
+    background: transparent;
+    border: 0px;
+    outline: 0px;
+    &:focus {
+        outline: 0px;
+    }
+}
+.pt__menu__search {
+    padding-right: 20px;
+    float: right;
+    height: 50px;
+    display: flex;
+    &__input[type=text] {
+        margin: 11.5px 0px;
+        font-size: 11pt;
+        width: 230px;
+        color: #fff;
+        text-indent: 5px;
+        height: 25px;
+        background: transparent;
+        border: 0px;
+        outline: none;
+        border-bottom: 2px solid #fff;
+        @include font_Montserrat();
+        &:focus {
+            outline: none !important;
+        }
+    }
+    &__button {
+        @include buttonTransparent();
+        cursor: pointer;
+        width: 25px;
+        font-size: 11pt;
+        color: #fff;
+        line-height: 50px
+    }
+}
+::-webkit-input-placeholder {
+    color: #bfbfbf;
+    @include font_Montserrat();
+    font-size: 10pt;
+}
+@media screen and (max-width:767px) {
+    .pt__menu__search {
+        display: flex;
+        width: 100%;
+        position: fixed;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .pt__menu__search__button {
+        display: none;
+    }
+}

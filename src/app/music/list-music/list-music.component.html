@@ -1,0 +1,12 @@
+<div class="list__music">
+    <ng-container *ngFor="let song of listMusic; let i = index">
+        <ng-container *ngIf="numbersongs; else AllSong">
+            <ng-container *ngIf="i < numbersongs">
+                <pt-music-item [ngClass]="{'block__item': isBlock}" [linkName]="linkName" [song]="song"></pt-music-item>
+            </ng-container>
+        </ng-container>
+        <ng-template #AllSong>
+            <pt-music-item [ngClass]="{'block__item': isBlock}" [linkName]="linkName" [song]="song"></pt-music-item>
+        </ng-template>
+    </ng-container>
+</div>

@@ -1,0 +1,24 @@
+.animation__load {
+    position: fixed;
+    z-index: 3;
+    display: flex;
+    top: 0px;
+    left: 0px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: #e4e4e4;
+    &__img {
+        width:200px;
+        animation: animationloaded 3s infinite linear;
+    }
+}
+@keyframes animationloaded {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

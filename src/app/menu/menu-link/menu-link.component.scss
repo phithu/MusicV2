@@ -1,0 +1,44 @@
+@mixin font_Montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+.pt__menu__container__item {
+    height: 50px;
+    line-height: 50px;
+    &__link {
+        color: #fff;
+        display: block;
+        @include font_Montserrat();
+        font-size: 12.5pt;
+        padding: 0px 10px;
+        &:hover {
+            background: #831010;
+        }
+        &__active {
+             background: #831010;
+        }
+    }
+}
+@media screen and (max-width:767px) {
+    .pt__menu__container__item {
+        height: inherit;
+        line-height: inherit;
+        margin: 15px;
+        padding-bottom: 5px;
+        border-bottom: 2px solid #be1b13;
+        &:last-child {
+            border:none;
+        }
+        &__link {
+            color: #333;
+            text-align: center;
+            &__active {
+                background: transparent;
+            }
+            &:hover {
+                background: transparent;
+            }
+        }
+        
+    }
+    
+}

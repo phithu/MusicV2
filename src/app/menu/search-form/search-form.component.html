@@ -1,0 +1,9 @@
+<div class="pt__menu__search">
+    <form [formGroup]="searchForm">
+        <input [@handleError]="stateInput" (keyup)="sendKeyword($event)" formControlName="inputField" class="pt__menu__search__input" [@turnOnWidth]="state" type="text" placeholder="Tìm kiếm bài hát, ca sỹ...">
+    </form>
+
+    <button class="pt__menu__search__button" (click)="activeInput()">
+        <i class="fa fa-search" aria-hidden="true"></i>
+    </button>
+</div>

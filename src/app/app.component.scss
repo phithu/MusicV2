@@ -1,0 +1,56 @@
+$menuBackground: #be1b13;
+header {
+    height: 50px;
+}
+.side__navbar {
+    width: 250px;
+    z-index: 99;
+    background: #e8e8e8;
+    height: 100%;
+    position: fixed !important;
+    top: 0px !important;
+    z-index: 99 !important;
+}
+.logo__mobile {
+    height: 50px;
+    display: block;
+    margin: 0px auto;
+    background: $menuBackground;
+    outline: 0px !important;
+    & focus {
+        outline: 0px !important;
+    }
+    &__img {
+        height: 40px;
+        padding: 5px 0px;
+        margin: 0px auto;
+        display: block;
+    }
+}
+#sidenavSearch {
+    width: 100%;
+    padding: 10px;
+    background: transparent !important;
+}
+.search__box__button {
+    width: 40px;
+    color: #fff;
+    background: transparent;
+    outline: 0px;
+    border: none;
+    height: 40px;
+    font-size: 25pt;
+    cursor:pointer;
+    position: fixed;
+    right: 10px;
+    z-index: 99;
+}
+
+.search__box__button .icon {
+    text-align: center;
+    display: block;
+    line-height: 40px;
+}
+main {
+    margin: 20px 30px;
+}

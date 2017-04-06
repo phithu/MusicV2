@@ -1,0 +1,23 @@
+<ng-progress [positionUsing]="'marginLeft'" [minimum]="0.15" [ease]="'linear'" [speed]="300" [showSpinner]="false" [direction]="'leftToRightIncreased'" [color]="'red'" [trickleSpeed]="300" [thick]="true"></ng-progress>
+<md-sidenav-container>
+    <md-sidenav #sidenavMenu class="side__navbar" mode="over" id="sidenavMenu" (open-start)="hiddenBody()" (close-start)="scrollBody()">
+        <a [routerLink]="['']" class="logo__mobile">
+            <img src="../assets/img/logo.png" alt="Logo music" class="logo__mobile__img">
+        </a>
+        <pt-menu-link [sidenavMenu]="sidenavMenu"></pt-menu-link>
+    </md-sidenav>
+    <md-sidenav #sidenavSearch class="side__navbar" align="end" mode="over" id="sidenavSearch" (open-start)="hiddenBody()" (close-start)="scrollBody()">
+        <button type="button" (click)="sidenavSearch.close()" class="search__box__button">
+           <i class="fa fa-times" aria-hidden="true"></i>
+        </button>
+        <pt-search-form [sidenavSearch]="sidenavSearch" #searchformComponent></pt-search-form>
+    </md-sidenav>
+    <header>
+        <pt-menu [searchformComponent]="searchformComponent" [sidenavMenu]="sidenavMenu" [sidenavSearch]="sidenavSearch"></pt-menu>
+    </header>
+    <main>
+        <router-outlet></router-outlet>
+    </main>
+    <footer>
+    </footer>
+</md-sidenav-container>
